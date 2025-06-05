@@ -24,7 +24,6 @@ temp_mp3_filename_global = None
 def Speech_Recognition(recognizer, microphone, ser_conn=None):
     text = None
     with microphone as source:
-        if ser_conn: ser_conn.write("LISTENING\n".encode('utf-8'))
         recognizer.adjust_for_ambient_noise(source, duration=0.5)
         print("이제 말씀하세요!")
         try:
@@ -35,7 +34,6 @@ def Speech_Recognition(recognizer, microphone, ser_conn=None):
 
     if audio:
         print("음성을 분석하고 있어요.")
-        if ser_conn: ser_conn.write("PROCESSING_STT\n".encode('utf-8'))
         try:
             text = recognizer.recognize_google(audio, language="ko-KR")
             print(f"인식된 텍스트: {text}")
