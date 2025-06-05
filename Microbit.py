@@ -35,8 +35,6 @@ input.on_button_pressed(Button.B, on_button_pressed_b)
 sonar2 = 0
 current_light_value = 0
 basic.show_icon(IconNames.HAPPY)
-last_sent_value = -1
-CHANGE_THRESHOLD = 20
 
 def on_forever():
     global current_light_value
