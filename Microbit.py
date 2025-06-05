@@ -10,16 +10,6 @@ def on_button_pressed_a():
     basic.show_icon(IconNames.HAPPY)
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
-def on_button_pressed_ab():
-    music.play(music.tone_playable(349, music.beat(BeatFraction.WHOLE)),
-        music.PlaybackMode.UNTIL_DONE)
-    serial.write_line("C")
-    basic.show_string("C")
-    basic.pause(200)
-    basic.clear_screen()
-    basic.show_icon(IconNames.HAPPY)
-input.on_button_pressed(Button.AB, on_button_pressed_ab)
-
 def on_button_pressed_b():
     music.play(music.tone_playable(392, music.beat(BeatFraction.WHOLE)),
         music.PlaybackMode.UNTIL_DONE)
@@ -31,6 +21,16 @@ def on_button_pressed_b():
     basic.clear_screen()
     basic.show_icon(IconNames.HAPPY)
 input.on_button_pressed(Button.B, on_button_pressed_b)
+
+def on_button_pressed_ab():
+    music.play(music.tone_playable(349, music.beat(BeatFraction.WHOLE)),
+        music.PlaybackMode.UNTIL_DONE)
+    serial.write_line("C")
+    basic.show_string("C")
+    basic.pause(200)
+    basic.clear_screen()
+    basic.show_icon(IconNames.HAPPY)
+input.on_button_pressed(Button.AB, on_button_pressed_ab)
 
 sonar2 = 0
 current_light_value = 0
